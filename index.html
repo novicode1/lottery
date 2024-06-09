@@ -1,0 +1,70 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+	<section class="section">
+		<div>
+			<h2>Валидатор лотерейных билетов</h2>
+			<small>На рынке с 2009 года.</small>
+			<small>А в IT со вчера.</small>
+
+			<br>
+			<br>
+			<input id="inputValue" placeholder="Введите значение" />
+			<button id="checkButton">Проверить</button>
+		</div>
+		<div id="result" style="display: none;">Следующая поптыка через 10 секунд </div>
+	</section>
+
+	<script>
+		document.getElementById("checkButton").addEventListener("click", function() {
+			var inputValue = document.getElementById("inputValue").value;
+			if (inputValue === '0710-071937-012') {
+				alert('ВААААААААААУУУУУУУУУ, НУ НИЧЕГО СЕБЕ, КАК НЕОЖИДАННО И ПРИЯТНО!!!! Вы выиграли путевку в Тарнув!!! А ключ то где искать? Может Дамблдор знает?');
+			} else {
+				disableInputAndButton();
+				alert('Папе Свину подложили свинью - лотерейный билет пустой =(');
+			}
+		});
+
+		function disableInputAndButton() {
+			document.getElementById("inputValue").disabled = true;
+			document.getElementById("checkButton").disabled = true;
+			document.getElementById("result").style.display = 'block';
+			setTimeout(function() {
+				document.getElementById("inputValue").disabled = false;
+				document.getElementById("checkButton").disabled = false;
+			document.getElementById("result").style.display = 'none';
+			}, 10000);
+		}
+	</script>
+
+	<style>
+		.section {
+			text-align: center;
+		}
+
+		.authors-image {
+			display: block;
+			max-width: 100%;
+			width: 15em;
+			height: auto;
+			margin: 1em auto 0;
+			box-shadow:
+				12px 0px 0px #111111,
+				-12px 0px 0px #111111,
+				0px -12px 0px #111111,
+				0px 12px 0px #111111,
+				inset 0px -12px 0px rgba(17, 17, 17, 0.3);
+		}
+	</style>
+</body>
+</html>
