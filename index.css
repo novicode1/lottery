@@ -215,6 +215,9 @@ p:last-child,
 pre:last-child {
 	margin-bottom: 0;
 }
+section {
+	text-align: center;
+}
 
 img {
 	color: var(--color-text-default);
